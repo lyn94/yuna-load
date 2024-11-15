@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Head from "next/head";
+import Script from "next/script";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -11,11 +13,14 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	// const naverClientID = process.env.NEXT_PUBLIC_NAVER_CLIENT_ID || "";
 	return (
 		<html lang="en">
-			<body className={"antialiased"}>
-				first layout
-				{children}
+			<Head>
+				<title>유나로드</title>
+			</Head>
+			<body>
+				<div className="inner-layout">{children}</div>
 			</body>
 		</html>
 	);

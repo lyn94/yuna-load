@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Head from "next/head";
+import Script from "next/script";
+export const KaKaoAPI = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY}&libraries=services,clusterer&autoload=false`;
 
 export const metadata: Metadata = {
   title: "유나로드",
@@ -12,13 +14,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const naverClientID = process.env.NEXT_PUBLIC_NAVER_CLIENT_ID || "";
   return (
     <html lang="en">
       <Head>
         <title>유나로드</title>
       </Head>
       <body>
+        <Script strategy="beforeInteractive" src={KaKaoAPI} />
         <div className="inner-layout">{children}</div>
       </body>
     </html>

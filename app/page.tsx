@@ -1,5 +1,9 @@
-import React from "react";
+import MapComponent from "./components/map/map";
 
 export default function page() {
-	return <div>root page</div>;
+  return (
+    <div>
+      <MapComponent />
+    </div>
+  );
 }

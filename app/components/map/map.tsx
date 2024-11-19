@@ -1,8 +1,9 @@
 "use client";
 
-import useKakaoLoader from "@/app/hooks/useKakaoLoader";
 import React, { useState } from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
+
+import useKakaoLoader from "@/app/hooks/useKakaoLoader";
 
 export default function MapComponent() {
   useKakaoLoader();
